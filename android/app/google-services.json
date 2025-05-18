@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "356396839141",
+    "firebase_url": "https://fir-crud-basics-ea659-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fir-crud-basics-ea659",
+    "storage_bucket": "fir-crud-basics-ea659.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356396839141:android:13bc228c961c2ae6d1e40c",
+        "android_client_info": {
+          "package_name": "com.example.crud_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDruuucNiAwj3yzK69ZmThkGxLT-EZ8Ltg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356396839141:android:55b8482628841a14d1e40c",
+        "android_client_info": {
+          "package_name": "com.example.ppb_task1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDruuucNiAwj3yzK69ZmThkGxLT-EZ8Ltg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
