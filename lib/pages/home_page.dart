@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_firebase/services/firestore.dart';
+import 'package:crud_firebase/services/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -39,15 +40,25 @@ class _HomePageState extends State<HomePage> {
             ),
             actions: [
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   final text = textController.text.trim();
                   Navigator.pop(context);
 
                   // Decide whether to add or update
                   if (docID == null) {
                     firestoreService.addNote(text);
+                    await NotificationService.createNotification(
+                      id: 1,
+                      title: 'New Note Added',
+                      body: '$text',
+                    );
                   } else {
                     firestoreService.updateNote(docID, text);
+                    await NotificationService.createNotification(
+                      id: 2,
+                      title: 'Note Updated',
+                      body: '$text',
+                    );
                   }
                   // Reset the form
                   textController.clear();
@@ -106,8 +117,14 @@ class _HomePageState extends State<HomePage> {
                             ),
                             IconButton(
                               icon: Icon(Icons.delete),
-                              onPressed:
-                                  () => firestoreService.deleteNote(docID),
+                              onPressed: () async {
+                                firestoreService.deleteNote(docID);
+                                await NotificationService.createNotification(
+                                  id: 3,
+                                  title: 'Note Deleted',
+                                  body: '$noteText',
+                                );
+                              },
                             ),
                           ],
                         ),
